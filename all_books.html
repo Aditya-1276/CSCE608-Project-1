@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books</title>
+    <style>
+        body {
+            background-color: #f5f5dc; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #500000; 
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .section h2 {
+            color: #500000; 
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li a {
+            text-decoration: none;
+            color: #500000;
+        }
+        li a:hover {
+            color: #4169e1; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>A&M Middle School Library</h1>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>All Books</h2>
+            <ul>
+                {% for book in books %}
+                    <li>
+                        <strong>Title:</strong> {{ book.Title }}<br>
+                        <strong>Author:</strong> {{ book.AuthorName }}<br>
+                        <strong>Publisher:</strong> {{ book.PublisherName }}<br>
+                        <strong>Publication Year:</strong> {{ book.PublicationYear }}<br>
+                        <strong>In Stock:</strong> {{ book.InStock }}
+                    </li>
+                    <br>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <a href="{{ url_for('display_index') }}"><button>Return to Index</button></a>
+    <div class="footer">For authorized personnel only</div>
+</body>
+</html>

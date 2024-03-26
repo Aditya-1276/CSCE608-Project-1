@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            background-color: #f5f5dc; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #500000; 
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .section {
+            width: 48%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .section h2 {
+            color: #500000; 
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li a {
+            text-decoration: none;
+            color: #500000; 
+        }
+        li a:hover {
+            color: #4169e1; 
+        }
+        .right-column { 
+            text-align: right; 
+        }
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: #500000; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for result in results %}
+        <li><strong>{{ result[0] }}</strong></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('display_index') }}"><button>Return to Index</button></a>
+</body>
+</html>
